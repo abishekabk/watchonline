@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Watch Store</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Watch Plant</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#watches">Watches</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#video">Video</a></li>
+                    <li><a href="#cart" id="cart-link">Cart (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="home" class="hero">
+        <div class="container">
+            <h2>Find Your Perfect Timepiece</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem, possimus.</p>
+            <a href="#watches" class="btn-primary">Shop Now</a>
+        </div>
+    </section>
+
+    <section id="watches">
+        <div class="container">
+            <h2>Our Collection</h2>
+            <div class="filters">
+                <input type="text" id="search-bar" placeholder="Search watches...">
+                <select id="category-filter">
+                    <option value="">All Categories</option>
+                    <option value="8">IWatch series 8</option>
+                    <option value="9">IWatch series 9</option>
+                    <option value="ultra">IWatch ultra</option>
+                </select>
+            </div>
+            <div class="watch-grid">
+                <div class="watch" data-category="men" data-name="Classic Men's Watch" data-price="149.99">
+                    <img src="iwatch 220.jpg" alt="IWatch series 8">
+                    <h3>IWatch series 8</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, cum.</p>
+                    <p><strong>Rs.46000</strong></p>
+                    <button class="btn-primary" onclick="openModal('watch1-details')">View Details</button>
+                    <button class="btn-secondary" onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <div class="watch" data-category="women" data-name="Women's Elegance Watch" data-price="199.99">
+                    <img src="iwatch a.jpg" alt="IWatch series 9">
+                    <h3>IWatch series 9</h3>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim, cumque?</p>
+                    <p><strong>Rs.58000</strong></p>
+                    <button class="btn-primary" onclick="openModal('watch2-details')">View Details</button>
+                    <button class="btn-secondary" onclick="addToCart(this)">Add to Cart</button>
+                </div>
+                <!-- Add more watch items as needed -->
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et animi optio quasi alias eaque hic. Natus, veritatis ipsa, quibusdam dolor atque nam voluptas eius distinctio libero placeat laudantium possimus non.</p>
+            <img src="watchstore.jpg" alt="About Us">
+        </div>
+    </section>
+
+    <section id="video">
+        <div class="container">
+            <h2>Watch Our Latest Video</h2>
+            <p>Check out our latest video to see our watches in action and learn more about what makes them special.</p>
+            <div class="video-container">
+                <iframe width="220" height="150" src="https://www.youtube.com/embed/Nvb_Kta7v6U?si=s02wZB3QIufy9rf8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                
+            </div>
+        </div>
+    </section>
+
+    <section id="cart">
+        <div class="container">
+            <h2>Your Shopping Cart</h2>
+            <div id="cart-items">
+                <p>Your cart is empty.</p>
+            </div>
+            <button class="btn-primary" id="checkout-btn">Checkout</button>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <p>Have questions or need assistance? Feel free to get in touch with us through the following methods:</p>
+            <p>Email: <a href="mailto:support@watchstore.com">support@watchstore.com</a></p>
+            <p>Phone: +1 234 567 890</p>
+            <p>Address: 123 Watch Street, Time City, TC 45678</p>
+        </div>
+    </section>
+
+    <!-- Modal for watch details -->
+    <div id="watch1-details" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('watch1-details')">&times;</span>
+            <h2>Classic Men's Watch</h2>
+            <img src="watch1.jpg" alt="Classic Men's Watch">
+            <p>This classic men's watch features an elegant design with a genuine leather strap. It combines sophistication with functionality, making it the perfect accessory for any formal occasion or daily wear.</p>
+            <p><strong>Price: $149.99</strong></p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>High-quality leather strap</li>
+                <li>Quartz movement for accurate timekeeping</li>
+                <li>Water-resistant up to 50 meters</li>
+                <li>Stainless steel case with a scratch-resistant mineral glass</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="watch2-details" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('watch2-details')">&times;</span>
+            <h2>Women's Elegance Watch</h2>
+            <img src="watch2.jpg" alt="Women's Elegance Watch">
+            <p>This women's elegance watch features a beautiful gold finish, making it a perfect accessory for both everyday elegance and special occasions. It combines luxury with practicality.</p>
+            <p><strong>Price: $199.99</strong></p>
+            <p><strong>Features:</strong></p>
+            <ul>
+                <li>Gold-plated stainless steel case</li>
+                <li>Quartz movement for reliable performance</li>
+                <li>Water-resistant up to 30 meters</li>
+                <li>Elegant design with a comfortable bracelet</li>
+            </ul>
+        </div>
+    </div>
+
+    
+</body>
+</html>
